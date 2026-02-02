@@ -1,4 +1,4 @@
-import eyeIcon from '../assets/eye-off.svg'
+import eyeIcon from '../../assets/eye-off.svg'
 
 const Input = (props) => {
   return (

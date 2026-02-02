@@ -1,5 +1,5 @@
 import FormField from "../molecules/FormField";
-import google from "../assets/google-icon.svg"
+import google from "../../assets/google-icon.svg";
 
 const Card = (props) => {
   return (
@@ -16,6 +16,7 @@ const Card = (props) => {
               label={field.label}
               type={field.type}
               placeholder={field.placeholder}
+              options={field.options}
             />
           ))}
           <p className="text-right text-[#333333AD] hover:text-[#9E9E9E] duration-100 cursor-pointer text-sm my-2 font-medium">Lupa Password?</p>

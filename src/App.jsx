@@ -1,5 +1,7 @@
 import './App.css'
+import Select from './components/atoms/Select';
 import Navbar from './components/organisms/Navbar'
+
 
 
 function App() {
@@ -7,7 +9,6 @@ function App() {
   return (
     <>
       <Navbar />
-      
     </>
   )
 }

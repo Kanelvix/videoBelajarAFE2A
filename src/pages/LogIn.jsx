@@ -26,7 +26,6 @@ function Login() {
       <Card
         title="Pendaftaran Akun"
         text="Yuk, daftarkan akunmu sekarang juga!"
-        type="text"
         fields={loginField}
         btnText1="Masuk"
         btnText2="Daftar"

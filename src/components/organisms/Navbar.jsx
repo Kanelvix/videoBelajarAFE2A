@@ -1,5 +1,5 @@
-import videoBelajar from '../assets/logo-videobelajar.svg'
-import avatar from '../assets/Avatar.png'
+import videoBelajar from '../../assets/logo-videobelajar.svg';
+import avatar from '../../assets/Avatar.png';
 
 function Navbar() {
   return (

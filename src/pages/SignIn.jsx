@@ -19,6 +19,15 @@ const signinField = [
     placeholder: "JohnDoe@gmail.com"
   },
   {
+    name: "gender",
+    label: "Jenis Kelamin",
+    type: "select",
+    options: [ 
+      { label: "Wanita", value: "woman" },
+      { label: "Pria", value: "man" }
+    ]
+  },
+  {
     name: "password",
     label: "Kata Sandi",
     type: "password",
@@ -32,6 +41,7 @@ const signinField = [
   }
 ];
 
+
 function Signin() {
   return (
     <>
@@ -39,10 +49,10 @@ function Signin() {
       <Card
         title="Masuk ke Akun"
         text="Yuk, lanjutin belajarmu di videobelajar."
-        type="text"
         fields={signinField}
         btnText1="Daftar"
         btnText2="Masuk"
+        options={signinField}
       />
     </>
   )
