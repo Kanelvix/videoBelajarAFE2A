@@ -1,5 +1,5 @@
 import './App.css'
-import Select from './components/atoms/Select';
+import PhoneNumberField from './components/molecules/PhoneNumberField';
 import Navbar from './components/organisms/Navbar'
 
 
@@ -9,6 +9,7 @@ function App() {
   return (
     <>
       <Navbar />
+      <PhoneNumberField />
     </>
   )
 }

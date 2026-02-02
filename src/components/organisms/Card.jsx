@@ -1,5 +1,7 @@
 import FormField from "../molecules/FormField";
 import google from "../../assets/google-icon.svg";
+import PhoneNumberField from "../molecules/PhoneNumberField";
+import { NavLink } from "react-router";
 
 const Card = (props) => {
   return (
@@ -11,19 +13,26 @@ const Card = (props) => {
         </div>
         <form className="w-full flex flex-col gap-5">
           {props.fields.map((field) => (
-            <FormField 
-              key={field.name}
-              label={field.label}
-              type={field.type}
-              placeholder={field.placeholder}
-              options={field.options}
-            />
+            field.type === "phone" ? (
+              <PhoneNumberField 
+                key={field.name} 
+                label={field.label}
+              />
+            ) : (
+              <FormField 
+                key={field.name}
+                label={field.label}
+                type={field.type}
+                placeholder={field.placeholder}
+                options={field.options}
+              />
+            )
           ))}
           <p className="text-right text-[#333333AD] hover:text-[#9E9E9E] duration-100 cursor-pointer text-sm my-2 font-medium">Lupa Password?</p>
         </form>
         <div className="flex flex-col gap-4 w-full">
-          <button className="h-9 text-[#FFFFFF] bg-[#3ECF4C] rounded-lg font-semibold cursor-pointer hover:opacity-80 duration-100">{props.btnText1}</button>
-          <button className="h-9 text-[#3ECF4C] bg-[#E2FCD9CC] rounded-lg font-semibold cursor-pointer hover:opacity-80 duration-100">{props.btnText2}</button>
+          <NavLink className="h-9 text-[#FFFFFF] bg-[#3ECF4C] rounded-lg font-semibold cursor-pointer hover:opacity-80 duration-100 flex justify-center items-center">{props.btnText1}</NavLink>
+          <NavLink to={`/${props.toPage}`} className="h-9 text-[#3ECF4C] bg-[#E2FCD9CC] rounded-lg font-semibold cursor-pointer hover:opacity-80 duration-100 flex justify-center items-center">{props.btnText2}</NavLink>
         </div>
 
         <div className="flex items-center w-full before:flex-1 before:content-[''] before:h-0.5 before:bg-[#3A35411F] before:m-1 after:flex-1 after:content-[''] after:h-0.5 after:bg-[#3A35411F] after:m-1">

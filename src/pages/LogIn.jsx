@@ -22,13 +22,14 @@ const loginField = [
 function Login() {
   return (
     <>
-      <Navbar />
+      <Navbar page="logInSignIn" />
       <Card
-        title="Pendaftaran Akun"
-        text="Yuk, daftarkan akunmu sekarang juga!"
+        title="Masuk ke Akun"
+        text="Yuk, lanjutin belajarmu di videobelajar."
         fields={loginField}
         btnText1="Masuk"
         btnText2="Daftar"
+        toPage="signin"
       />
     </>
   )

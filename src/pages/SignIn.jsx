@@ -28,6 +28,11 @@ const signinField = [
     ]
   },
   {
+    name: "phone",
+    label: "No. Hp",
+    type: "phone"
+  },
+  {
     name: "password",
     label: "Kata Sandi",
     type: "password",
@@ -45,14 +50,15 @@ const signinField = [
 function Signin() {
   return (
     <>
-      <Navbar />
+      <Navbar page="logInSignIn" />
       <Card
-        title="Masuk ke Akun"
-        text="Yuk, lanjutin belajarmu di videobelajar."
+        title="Pendaftaran Akun"
+        text="Yuk, daftarkan akunmu sekarang juga!"
         fields={signinField}
         btnText1="Daftar"
         btnText2="Masuk"
         options={signinField}
+        toPage="login"
       />
     </>
   )
