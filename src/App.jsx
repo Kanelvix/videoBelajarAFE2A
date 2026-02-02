@@ -1,15 +1,11 @@
+import { Outlet } from 'react-router';
 import './App.css'
-import PhoneNumberField from './components/molecules/PhoneNumberField';
-import Navbar from './components/organisms/Navbar'
-
-
 
 function App() {
 
   return (
     <>
-      <Navbar />
-      <PhoneNumberField />
+      <Outlet />
     </>
   )
 }

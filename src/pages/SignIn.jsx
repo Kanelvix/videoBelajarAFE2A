@@ -1,8 +1,6 @@
 import React from 'react'
 
 import '../App.css'
-
-import Navbar from '../components/organisms/Navbar'
 import Card from '../components/organisms/Card'
 
 const signinField = [
@@ -50,7 +48,6 @@ const signinField = [
 function Signin() {
   return (
     <>
-      <Navbar page="logInSignIn" />
       <Card
         title="Pendaftaran Akun"
         text="Yuk, daftarkan akunmu sekarang juga!"

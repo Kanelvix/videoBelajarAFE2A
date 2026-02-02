@@ -1,7 +1,6 @@
 import React from 'react'
 
 import '../App.css'
-import Navbar from '../components/organisms/Navbar'
 import Card from '../components/organisms/Card'
 
 const loginField = [
@@ -22,7 +21,6 @@ const loginField = [
 function Login() {
   return (
     <>
-      <Navbar page="logInSignIn" />
       <Card
         title="Masuk ke Akun"
         text="Yuk, lanjutin belajarmu di videobelajar."
