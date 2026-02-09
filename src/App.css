@@ -7,3 +7,11 @@
     text-overflow: ellipsis;
   }
 }
+
+.limit-one-line {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}

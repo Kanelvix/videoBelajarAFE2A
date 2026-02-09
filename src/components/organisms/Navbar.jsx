@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router';
-import videoBelajar from '../../assets/logo-videobelajar.svg';
+import videoBelajar from '../../../public/logo-videobelajar.svg';
 import ProfileBox from '../molecules/ProfileBox';
 
 function Navbar(props) {

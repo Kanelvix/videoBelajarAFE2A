@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../../assets/logo-videobelajar.svg'
+import logo from '../../../public/logo-videobelajar.svg';
 import FooterLinks from '../molecules/FooterLinks'
 import { socialMediasIcons } from '../../assets/Icons/socialMedias';
 import SocialMediaButtons from '../molecules/SocialMediaButtons';
