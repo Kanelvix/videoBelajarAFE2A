@@ -1,4 +1,4 @@
-import { thumb1, thumb2, thumb3, thumb4, thumb5, thumb6, thumb7, thumb8, thumb9 } from "../assets/thumbnails";
+import { thumb1, thumb2, thumb3, thumb4, thumb5, thumb6, thumb7, thumb8, thumb9, thumb10, thumb11, thumb12, thumb13, thumb14, thumb15 } from "../assets/thumbnails";
 
 import { pfp1, pfp2, pfp3, pfp4, pfp5, pfp6, pfp7, pfp8 } from "../assets/photo-profiles";
 
@@ -21,8 +21,8 @@ const courses = [
     category: "Desain",
     desc: "Kursus ini membahas prinsip dasar UI/UX, mulai dari user research, wireframing, hingga pembuatan desain yang user-friendly dan menarik.",
     price: "350K",
-    pfp: pfp3,
-    thumbnail: thumb3,
+    pfp: pfp2,
+    thumbnail: thumb2,
     name: "Kevin Wijaya",
     role: "UI/UX Designer",
     company: "Traveloka"
@@ -33,8 +33,8 @@ const courses = [
     category: "Pengembangan Diri",
     price: "200K",
     desc: "Tingkatkan kemampuan berbicara di depan umum dan komunikasi profesional agar lebih percaya diri dalam presentasi dan diskusi.",
-    pfp: pfp5,
-    thumbnail: thumb5,
+    pfp: pfp3,
+    thumbnail: thumb3,
     name: "Dimas Saputra",
     role: "Communication Coach",
     company: "Kompas"
@@ -45,8 +45,8 @@ const courses = [
     category: "Bisnis",
     desc: "Pelajari cara menyusun strategi bisnis yang efektif, menganalisis pasar, dan membuat perencanaan jangka panjang untuk pertumbuhan bisnis.",
     price: "400K",
-    pfp: pfp7,
-    thumbnail: thumb7,
+    pfp: pfp4,
+    thumbnail: thumb4,
     name: "Arif Nugroho",
     role: "Business Consultant",
     company: "McKinsey"
@@ -57,8 +57,8 @@ const courses = [
     category: "Pemasaran",
     desc: "Kuasai strategi pengelolaan media sosial, pembuatan konten kreatif, serta analisis performa untuk meningkatkan engagement audiens.",
     price: "300K",
-    pfp: pfp2,
-    thumbnail: thumb2,
+    pfp: pfp5,
+    thumbnail: thumb5,
     name: "Ayu Lestari",
     role: "Social Media Manager",
     company: "Shopee"
@@ -69,8 +69,8 @@ const courses = [
     category: "Desain",
     desc: "Belajar desain grafis menggunakan Figma, mulai dari layout, warna, tipografi, hingga pembuatan aset visual profesional.",
     price: "280K",
-    pfp: pfp4,
-    thumbnail: thumb4,
+    pfp: pfp6,
+    thumbnail: thumb6,
     name: "Nadia Putri",
     role: "Graphic Designer",
     company: "Ruangguru"
@@ -81,8 +81,8 @@ const courses = [
     category: "Pengembangan Diri",
     desc: "Kursus ini membantu kamu mengatur waktu dengan lebih efektif, meningkatkan fokus, dan mencapai target kerja secara konsisten.",
     price: "180K",
-    pfp: pfp6,
-    thumbnail: thumb6,
+    pfp: pfp7,
+    thumbnail: thumb7,
     name: "Salsa Maharani",
     role: "Productivity Consultant",
     company: "Kumparan"
@@ -93,8 +93,8 @@ const courses = [
     category: "Bisnis",
     desc: "Bangun pola pikir entrepreneur, pahami proses membangun startup, serta cara menghadapi tantangan dalam dunia bisnis modern.",
     price: "350K",
-    pfp: pfp1,
-    thumbnail: thumb9,
+    pfp: pfp8,
+    thumbnail: thumb8,
     name: "Rizky Adinata",
     role: "Startup Founder",
     company: "Bukalapak"
@@ -105,11 +105,83 @@ const courses = [
     category: "Bisnis",
     desc: "Pelajari pengelolaan keuangan startup, mulai dari budgeting, cash flow, hingga pengambilan keputusan finansial yang tepat.",
     price: "420K",
-    pfp: pfp8,
-    thumbnail: thumb8,
+    pfp: pfp1,
+    thumbnail: thumb9,
     name: "Maya Santoso",
     role: "Financial Analyst",
     company: "Gojek"
+  },
+  {
+    id: 10,
+    title: "Branding Strategy & Positioning",
+    category: "Pemasaran",
+    desc: "Pelajari cara membangun brand yang kuat, menentukan positioning yang tepat, dan menciptakan persepsi positif di benak audiens.",
+    price: "320K",
+    pfp: pfp2,
+    thumbnail: thumb10,
+    name: "Indra Mahendra",
+    role: "Brand Strategist",
+    company: "Unilever"
+  },
+  {
+    id: 11,
+    title: "Design Thinking for Problem Solving",
+    category: "Pengembangan Diri",
+    desc: "Kursus ini mengajarkan metode design thinking untuk memecahkan masalah secara kreatif dan berorientasi pada solusi.",
+    price: "230K",
+    pfp: pfp3,
+    thumbnail: thumb11,
+    name: "Clara Widyastuti",
+    role: "Innovation Consultant",
+    company: "IDEO"
+  },
+  {
+    id: 12,
+    title: "Advanced UI Design Systems",
+    category: "Desain",
+    desc: "Pelajari cara membangun design system yang konsisten dan scalable untuk produk digital skala besar.",
+    price: "380K",
+    pfp: pfp4,
+    thumbnail: thumb12,
+    name: "Fajar Hidayat",
+    role: "Product Designer",
+    company: "Grab"
+  },
+  {
+    id: 13,
+    title: "Leadership & Team Management",
+    category: "Pengembangan Diri",
+    desc: "Kembangkan skill kepemimpinan, manajemen tim, dan komunikasi efektif untuk lingkungan kerja profesional.",
+    price: "270K",
+    pfp: pfp5,
+    thumbnail: thumb13,
+    name: "Ratna Kusuma",
+    role: "HR Business Partner",
+    company: "Telkom Indonesia"
+  },
+  {
+    id: 14,
+    title: "Business Analytics with Excel",
+    category: "Bisnis",
+    desc: "Pelajari analisis data bisnis menggunakan Excel untuk mendukung pengambilan keputusan yang lebih akurat.",
+    price: "300K",
+    pfp: pfp6,
+    thumbnail: thumb14,
+    name: "Andre Saputra",
+    role: "Business Analyst",
+    company: "BCA"
+  },
+  {
+    id: 15,
+    title: "Content Marketing & Copywriting",
+    category: "Pemasaran",
+    desc: "Kuasai teknik copywriting dan content marketing untuk menarik audiens dan meningkatkan konversi.",
+    price: "290K",
+    pfp: pfp7,
+    thumbnail: thumb15,
+    name: "Melisa Hartono",
+    role: "Content Marketing Lead",
+    company: "Zalora"
   }
 ];
 

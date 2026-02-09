@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 const tabs = [
   "Semua Kelas",
@@ -8,9 +8,7 @@ const tabs = [
   "Bisnis"
 ]
 
-function CategoryTabs() {
-  const [activeTab, setActiveTab] = useState("Semua Kelas")
-
+function CategoryTabs({ activeTab, setActiveTab }) {
   return (
     <div className='flex gap-9 h-16 w-full overflow-x-auto no-scrollbar'>
       {tabs.map((tab) => (

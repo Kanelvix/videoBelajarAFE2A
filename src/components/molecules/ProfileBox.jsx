@@ -86,7 +86,7 @@ function ProfileBox() {
 
       <div 
         className={`
-          fixed md:w-52 top-20 md:top-20 inset-x-0 md:right-5 md:inset-auto
+          fixed md:w-52 top-[4.875rem] md:top-20 border-t-[1px] border-[--border-color] md:border-none inset-x-0 md:right-5 md:inset-auto
           bg-white shadow-lg rounded-b-md
           overflow-hidden origin-top transition-transform duration-300
         ${open===true ? 'scale-y-100' : 'scale-y-0'}

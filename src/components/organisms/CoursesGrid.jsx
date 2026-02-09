@@ -1,11 +1,10 @@
 import React from 'react'
 import CoursesCard from './CoursesCard'
-import courses from '../../data/courses'
 
-function CoursesGrid() {
+function CoursesGrid(props) {
   return (
     <section className='grid gap-5 md:gap-6 md:grid-cols-2 lg:grid-cols-3 '>
-      {courses.map((item) => (
+      {props.courses.map((item) => (
         <CoursesCard 
           img={item.thumbnail}
           title={item.title}
