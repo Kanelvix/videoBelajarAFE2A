@@ -28,8 +28,17 @@ function Products() {
       <div>
         <p className='text-3xl text-[--dark-color] font-bold'>Product Management</p>
       </div>
-      <AddProductForm fetchCourses={fetchCourses} editing={editing} setEditing={setEditing} />
-      <ProductList loading={loading} data={data} setEditing={setEditing} fetchCourses={fetchCourses} />
+      <AddProductForm
+        fetchCourses={fetchCourses}
+        editing={editing}
+        setEditing={setEditing}
+      />
+      <ProductList
+        loading={loading}
+        data={data}
+        setEditing={setEditing}
+        fetchCourses={fetchCourses}
+      />
     </section>
   )
 }

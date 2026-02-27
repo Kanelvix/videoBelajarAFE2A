@@ -4,7 +4,7 @@ import Price from '../atoms/Price'
 
 function Products( {title, desc, price, mentor, role, onEdit, handleDelete} ) {
   return (
-    <tr className='border-t'>
+    <tr className='border-t hover:bg-[--light-gray-color-2] duration-300'>
       <td className='p-3 md:p-4'>
         <p className='text-[--dark-color] font-medium'>{title}</p>
         <p className='text-sm '>{desc}</p>

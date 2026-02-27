@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ProductsRow from '../molecules/ProductRow.jsx'
 import axios from 'axios'
+import Pagination from './Pagination.jsx'
 
 function ProductList({loading, data, setEditing, fetchCourses}) {
+  const [currentPage, setCurrentPage] = useState(1);
+  const rowsPerPage = 5;
+
   const deleteCourse = async(id) => {
     await axios.delete(`https://699fde8d3188b0b1d536fff8.mockapi.io/api/v1/courses/${id}`)
     fetchCourses();
@@ -12,7 +16,11 @@ function ProductList({loading, data, setEditing, fetchCourses}) {
     setEditing(item);
     window.scrollTo({top: 0, behavior: 'smooth'});
   }
-  
+
+  const lastRow = currentPage * rowsPerPage;
+  const firstRow = lastRow - rowsPerPage;
+  const currentRows = data.slice(firstRow, lastRow);
+
   return (
     <div className='bg-white p-5 rounded-lg border border-[--border-color] overflow-auto'>
       <p className='font-semibold text-[--dark-color] text-xl mb-4'>Daftar Produk {`(${data.length})`}</p>
@@ -28,13 +36,19 @@ function ProductList({loading, data, setEditing, fetchCourses}) {
               </tr>
             </thead>
             <tbody>
-              {data.map((item) => (
+              {currentRows.map((item) => (
                 <ProductsRow key={item.id} title={item.title} desc={item.desc} price={item.price} mentor={item.name} role={item.role} onEdit={() => onEdit(item)} handleDelete={() => deleteCourse(item.id)} />
               ))}
             </tbody>
           </table>
         )
       }
+      <Pagination
+        totalRows={data.length}
+        rowsPerPage={rowsPerPage}
+        setCurrentPage={setCurrentPage}
+        currentPage={currentPage}
+      />
     </div>
   )
 }
