@@ -42,7 +42,7 @@ function Sorter() {
       <div className='h-12 bg-white border border-[--border-color] rounded-lg p-3 relative cursor-pointer select-none'>
         <p className='font-medium selected-option text-nowrap pr-9'>{selected}</p>
         <div className='absolute size-6 flex justify-center items-center top-1/2 -translate-y-1/2 right-3'>
-          <img src={dropdown} alt="" />
+          <img src={dropdown} className={`transition-all duration-300 ${open ? '-rotate-180' : ''}`} alt="" />
         </div>
       </div>
       <ul className={`

@@ -19,7 +19,9 @@
   --light-green-color: #E2FCD9CC;
   --base-color: #333333AD;
   --yellow-color: #FFBD3A;
+  --light-yellow-color: #FFDF88;
   --selected-color: #F4F5FA;
+  --hover-color: #d7dae6;
 }
 
 main {

@@ -1,14 +1,37 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import SectionTitle from '../components/molecules/SectionTitle.jsx'
 import CoursesFilter from '../components/organisms/CoursesFilter.jsx'
 import CoursesGrid from '../components/organisms/CoursesGrid.jsx'
-import courses from '../data/courses.js'
 import { useLocation } from 'react-router'
 import SearchBar from '../components/molecules/SearchBar.jsx'
 import Sorter from '../components/molecules/Sorter.jsx'
+import Pagination from '../components/organisms/Pagination.jsx'
+import courses from '../data/courses.js'
 
 function Kategori() {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [coursesPerPage, setCoursesPerPage] = useState(9);
+
+  const lastCourseIndex = currentPage * coursesPerPage;
+  const firstCourseIndex = lastCourseIndex - coursesPerPage;
+  const currentCourse = courses.slice(firstCourseIndex, lastCourseIndex);
+
   const location = useLocation();
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setCoursesPerPage(6);
+      } else {
+        setCoursesPerPage(9);
+      }
+    }
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return() => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
     <main className='py-16'>
@@ -28,7 +51,8 @@ function Kategori() {
               <Sorter />
               <SearchBar />
             </div>
-            <CoursesGrid courses={courses} location={location.pathname} />
+            <CoursesGrid courses={currentCourse} location={location.pathname} />
+            <Pagination totalCourses={courses.length} coursesPerPage={coursesPerPage} setCurrentPage={setCurrentPage} currentPage={currentPage} />
           </div>
         </div>
       </div>
