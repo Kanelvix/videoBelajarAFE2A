@@ -12,9 +12,8 @@ const list = [
   "Rating Terendah"
 ]
 
-function Sorter() {
+function Sorter({sorter, setSorter}) {
   const [open, setOpen] = useState(false);
-  const [selected, setSelected] = useState("Urutkan");
 
   const sorterRef = useRef();
 
@@ -23,7 +22,7 @@ function Sorter() {
   }
 
   const selectSorter = (value) => {
-    setSelected(value)
+    setSorter(value)
   }
 
   useEffect(() => {
@@ -40,7 +39,7 @@ function Sorter() {
   return (
     <div className='relative flex-1 md:max-w-max' onClick={openDropDown} ref={sorterRef}>
       <div className='h-12 bg-white border border-[--border-color] rounded-lg p-3 relative cursor-pointer select-none'>
-        <p className='font-medium selected-option text-nowrap pr-9'>{selected}</p>
+        <p className='font-medium selected-option text-nowrap pr-9'>{sorter}</p>
         <div className='absolute size-6 flex justify-center items-center top-1/2 -translate-y-1/2 right-3'>
           <img src={dropdown} className={`transition-all duration-300 ${open ? '-rotate-180' : ''}`} alt="" />
         </div>

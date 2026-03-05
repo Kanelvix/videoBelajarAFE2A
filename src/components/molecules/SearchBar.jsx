@@ -2,10 +2,10 @@ import React from 'react'
 import Input from '../atoms/Input'
 import search from '../../assets/search.svg'
 
-function SearchBar() {
+function SearchBar({setInput}) {
   return (
     <div className='relative flex-1 md:max-w-56'>
-      <Input placeholder="Cari Kelas" type="search" />
+      <Input placeholder="Cari Kelas" type="search" setInput={setInput} />
       <div className='absolute size-6 top-1/2 -translate-y-1/2 right-4 flex items-center justify-center'>
         <img src={search} alt="" />
       </div>

@@ -16,6 +16,8 @@ function Kategori() {
     harga: "Semua",
     durasi: "Semua",
   });
+  const [sorter, setSorter] = useState("Urutkan");
+  const [input, setInput] = useState("");
 
   const filteredCourses = courses.filter((courses) => {
     const matchSubject =
@@ -33,7 +35,20 @@ function Kategori() {
       (filters.durasi === "4 - 8 Jam" && courses.durasi >= 4 && courses.durasi <= 8) ||
       (filters.durasi === "Lebih dari 8 Jam" && courses.durasi > 8);
 
-    return matchSubject && matchPrice && matchDuration;
+    const matchSearch =
+      input === "" ||
+      courses.title.toLowerCase().includes(input.toLowerCase());
+
+    return matchSubject && matchPrice && matchDuration && matchSearch;
+  }).sort((a, b) => {
+    switch(sorter) {
+      case "Harga Rendah": return a.price - b.price;
+      case "Harga Tinggi": return b.price - a.price;
+      case "A to Z": return a.title.localeCompare(b.title);
+      case "Z to A": return b.title.localeCompare(a.title);
+      case "Rating Tertinggi": return b.rating - a.rating;
+      case "Rating Terendah": return a.rating - b.rating;
+    }
   })
 
   const lastCourseIndex = currentPage * coursesPerPage;
@@ -73,8 +88,8 @@ function Kategori() {
           <CoursesFilter filters={filters} setFilters={setFilters} />
           <div className='flex flex-col gap-6 md:gap-8'>
             <div className='flex gap-4 justify-end'>
-              <Sorter />
-              <SearchBar />
+              <Sorter sorter={sorter} setSorter={setSorter} />
+              <SearchBar input={input} setInput={setInput} />
             </div>
             <CoursesGrid courses={currentCourse} location={location.pathname} />
             <Pagination totalCourses={filteredCourses.length} coursesPerPage={coursesPerPage} setCurrentPage={setCurrentPage} currentPage={currentPage} />

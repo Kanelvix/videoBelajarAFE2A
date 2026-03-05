@@ -12,6 +12,7 @@ const Input = (props) => {
         `}
         type={props.type}
         placeholder={props.placeholder}
+        onChange={(e) => props.setInput(e.target.value)}
       />
       {props.type === "password" && <img src={eyeIcon} alt="eye-off" className='absolute top-1/2 -translate-y-1/2 right-3 cursor-pointer hover:opacity-80 duration-100' />}
     </div>
