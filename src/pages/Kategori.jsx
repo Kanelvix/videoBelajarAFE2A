@@ -7,15 +7,18 @@ import SearchBar from '../components/molecules/SearchBar.jsx'
 import Sorter from '../components/molecules/Sorter.jsx'
 import Pagination from '../components/organisms/Pagination.jsx'
 import { getCourses } from '../services/courses.js'
+import { useDispatch, useSelector } from 'react-redux'
+import { setCourses } from '../store/redux/courseSlice.js'
 
 function Kategori() {
-  const [loading, setLoading] = useState(true);
-  const [data, setData] = useState([]);
+  const dispatch = useDispatch();
+  const data = useSelector((state) => state.courses.items);
+  const [loading, setLoading] = useState(data.length === 0);
 
   const fetchCourses = () => {
     getCourses()
     .then((response) => {
-      setData(response.data);
+      dispatch(setCourses(response.data));
     }).catch((error) => {
       console.log("error", error);
     }).finally(() => {
@@ -24,7 +27,9 @@ function Kategori() {
   }
 
   useEffect(() => {
-    fetchCourses();
+    if (data.length === 0) {
+      fetchCourses();
+    }
   }, []);
   
   const [currentPage, setCurrentPage] = useState(1);

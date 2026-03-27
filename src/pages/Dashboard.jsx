@@ -2,10 +2,13 @@ import React, { useEffect, useState } from 'react'
 import SectionTitle from '../components/molecules/SectionTitle'
 import DashboardCards from '../components/molecules/DashboardCards'
 import { getCourses } from '../services/courses';
+import { useDispatch, useSelector } from 'react-redux';
+import { setCourses } from '../store/redux/courseSlice';
 
 function Dashboard() {
   const [loading, setLoading] = useState(true);
-  const [data, setData] = useState([]);
+  const dispatch = useDispatch();
+  const data = useSelector((state) => state.courses.items);
 
   const stats = [
     {
@@ -27,7 +30,7 @@ function Dashboard() {
   useEffect(() => {
     getCourses()
     .then((response) => {
-      setData(response.data);
+      dispatch(setCourses(response.data));
     }).catch((error) => {
       console.log("error", error);
     }).finally(() => {

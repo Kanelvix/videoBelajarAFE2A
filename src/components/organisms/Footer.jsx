@@ -1,5 +1,4 @@
 import React from 'react'
-import logo from '../../../public/logo-videobelajar.svg';
 import FooterLinks from '../molecules/FooterLinks'
 import { socialMediasIcons } from '../../assets/Icons/socialMedias';
 import SocialMediaButtons from '../molecules/SocialMediaButtons';
@@ -61,7 +60,7 @@ function Footer() {
         <div className='flex flex-col gap-4  md:flex-row md:gap-10 md:justify-between'>
           <div className='flex flex-col gap-4 max-w-96'>
             <div>
-              <img src={logo} alt="" />
+              <img src='/logo-videobelajar.svg' alt="" />
             </div>
             <div className='flex flex-col gap-2'>
               <p className='font-bold text-sm md:text-lg text-[--dark-color]'>Gali Potensi Anda Melalui Pembelajaran Video di hariesok.id!</p>

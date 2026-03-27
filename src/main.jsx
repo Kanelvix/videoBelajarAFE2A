@@ -1,4 +1,3 @@
-import { StrictMode } from 'react';
 import ReactDOM from "react-dom/client";
 import './index.css';
 
@@ -18,6 +17,9 @@ import { MainLayout } from './layout/MainLayout.jsx';
 import Dashboard from './pages/Dashboard.jsx';
 import DashboardLayout from './layout/DashboardLayout.jsx';
 import Products from './pages/Products.jsx';
+
+import store from './store/redux/store.js'
+import { Provider } from 'react-redux';
 
 const router = createBrowserRouter([
   {
@@ -60,5 +62,7 @@ const rootElement = document.getElementById("root");
 const root = ReactDOM.createRoot(rootElement);
 
 root.render(
-  <RouterProvider router={router} />,
+  <Provider store={store}>
+    <RouterProvider router={router} />,
+  </Provider>
 );

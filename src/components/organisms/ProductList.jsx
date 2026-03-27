@@ -1,16 +1,21 @@
 import React, { useState } from 'react'
 import ProductsRow from '../molecules/ProductRow.jsx'
 import Pagination from './Pagination.jsx'
-import { deleteCourse } from '../../services/courses.js';
+import { deleteCourse, getCourses } from '../../services/courses.js';
 import { useLocation } from 'react-router';
+import { useDispatch, useSelector } from 'react-redux';
+import { setCourses } from '../../store/redux/courseSlice.js';
 
-function ProductList({loading, data, setEditing, fetchCourses}) {
+function ProductList({loading, setEditing}) {
+  const dispatch = useDispatch();
+  const data = useSelector((state) => state.courses.items);
   const [currentPage, setCurrentPage] = useState(1);
   const rowsPerPage = 5;
 
   const handleDelete = async(id) => {
     await deleteCourse(id);
-    fetchCourses();
+    const response = await getCourses();
+    dispatch(setCourses(response.data));
   }
 
   const onEdit = (item) => {

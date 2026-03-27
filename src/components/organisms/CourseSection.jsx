@@ -3,18 +3,21 @@ import SectionTitle from '../molecules/SectionTitle'
 import CoursesGrid from './CoursesGrid'
 import CategoryTabs from '../molecules/CategoryTabs'
 import { getCourses } from '../../services/courses'
+import { useDispatch, useSelector } from 'react-redux'
+import { setCourses } from '../../store/redux/courseSlice'
 
 
 function CourseSection() {
   const [activeTab, setActiveTab] = useState("Semua Kelas")
 
   const [loading, setLoading] = useState(true);
-  const [data, setData] = useState([]);
+  const data = useSelector((state) => state.courses.items);
+  const dispatch = useDispatch();
 
   const fetchCourses = () => {
     getCourses()
     .then((response) => {
-      setData(response.data);
+      dispatch(setCourses(response.data));
     }).catch((error) => {
       console.log("error", error);
     }).finally(() => {

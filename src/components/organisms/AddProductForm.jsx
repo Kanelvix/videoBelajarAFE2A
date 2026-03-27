@@ -1,7 +1,9 @@
 import React, { useEffect, useReducer } from 'react'
 import ProductFormInput from '../molecules/ProductFormInput'
 import ProductFormSelect from '../molecules/ProductFormSelect'
-import { postCourse, putCourse } from '../../services/courses'
+import { getCourses, postCourse, putCourse } from '../../services/courses'
+import { useDispatch } from 'react-redux'
+import { setCourses } from '../../store/redux/courseSlice'
 
 const inputs = [
   {
@@ -107,7 +109,8 @@ const action = (state, action) => {
   }
 }
 
-function AddProductForm({fetchCourses, editing, setEditing}) {
+function AddProductForm({editing, setEditing}) {
+  const dispatch = useDispatch();
   const [data, setData] = useReducer(action, defaultForm);
 
 
@@ -123,7 +126,8 @@ function AddProductForm({fetchCourses, editing, setEditing}) {
   const updateCourse = async(data) => {
     try {
       await putCourse(data);
-      fetchCourses();
+      const response = await getCourses();
+      dispatch(setCourses(response.data));
     } catch {
       console.log('failed update');
     }
@@ -135,7 +139,8 @@ function AddProductForm({fetchCourses, editing, setEditing}) {
         ...data,
         price: Number(data.price)
       });
-      fetchCourses();
+      const response = await getCourses();
+      dispatch(setCourses(response.data));
     } catch{
       console.log('failed')
     }    

@@ -2,16 +2,19 @@ import React, { useEffect, useState } from 'react'
 import AddProductForm from '../components/organisms/AddProductForm'
 import ProductList from '../components/organisms/ProductList'
 import { getCourses } from '../services/courses';
+import { useDispatch, useSelector } from 'react-redux';
+import { setCourses } from '../store/redux/courseSlice';
 
 function Products() {
-  const [loading, setLoading] = useState(true);
-  const [data, setData] = useState([]);
+  const dispatch = useDispatch();
+  const data = useSelector((state) => state.courses.items);
+  const [loading, setLoading] = useState(data.length === 0);
   const [editing, setEditing] = useState(null);
 
   const fetchCourses = () => {
     getCourses()
     .then((response) => {
-      setData(response.data);
+      dispatch(setCourses(response.data));
     }).catch((error) => {
       console.log("error", error);
     }).finally(() => {
@@ -20,7 +23,9 @@ function Products() {
   }
 
   useEffect(() => {
-    fetchCourses();
+    if (data.length === 0) {
+      fetchCourses();
+    }
   }, []);
   
   return (
@@ -29,7 +34,6 @@ function Products() {
         <p className='text-3xl text-[--dark-color] font-bold'>Product Management</p>
       </div>
       <AddProductForm
-        fetchCourses={fetchCourses}
         editing={editing}
         setEditing={setEditing}
       />
@@ -37,7 +41,6 @@ function Products() {
         loading={loading}
         data={data}
         setEditing={setEditing}
-        fetchCourses={fetchCourses}
       />
     </section>
   )
