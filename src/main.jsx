@@ -17,6 +17,7 @@ import { MainLayout } from './layout/MainLayout.jsx';
 import Dashboard from './pages/Dashboard.jsx';
 import DashboardLayout from './layout/DashboardLayout.jsx';
 import Products from './pages/Products.jsx';
+import ProductDetails from "./pages/ProductDetails.jsx";
 
 import store from './store/redux/store.js'
 import { Provider } from 'react-redux';
@@ -44,6 +45,7 @@ const router = createBrowserRouter([
           { path: "/pesanan", Component: Pesanan },
           { path: "/kelas", Component: Kelas },
           { path: "/profil", Component: Profil },
+          { path: "/produk/:id", Component: ProductDetails },
         ]
       },
       {
@@ -63,6 +65,6 @@ const root = ReactDOM.createRoot(rootElement);
 
 root.render(
   <Provider store={store}>
-    <RouterProvider router={router} />,
+    <RouterProvider router={router} />
   </Provider>
 );

@@ -39,7 +39,7 @@ function RatingStars(props) {
           return <Star key={i} type={type} />
         })}
       </div>
-      <p className='underline text-sm font-medium'>{props.rating} ({props.totalReview})</p>
+      <p className={`${props.totalReview ? 'underline' : ''} text-sm font-medium`}>{props.rating} {props.totalReview ? `(${props.totalReview})` : ''}</p>
     </div>
   )
 }

@@ -1,13 +1,17 @@
 import React from 'react'
 import SectionTitle from '../molecules/SectionTitle'
 import CTAInput from '../molecules/CTAInput'
+import bgUrl from '../../assets/background/e0f71e25cc34e79e1f52284620dbea34fb453966.jpg'
 
 function CTABanner() {
   return (
-    <section className='
+    <section 
+    style={{
+      backgroundImage: `url(${bgUrl})`
+    }}
+    className='
       w-full
       bg-[#000000cc]
-      bg-[url("/background/e0f71e25cc34e79e1f52284620dbea34fb453966.jpg")]
       bg-no-repeat bg-center bg-cover bg-blend-darken
       flex justify-center rounded-lg py-12 md:py-14
     '>
