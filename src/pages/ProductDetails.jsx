@@ -8,6 +8,91 @@ import { setCourses } from '../store/redux/courseSlice';
 import PricingCard from '../components/organisms/PricingCard';
 import ReviewsSection from '../components/organisms/ReviewsSection';
 import TutorSection from '../components/organisms/TutorSection';
+import Accordion from '../components/organisms/Accordion';
+
+
+const courses = [
+  {
+    title: "Introduction to Course 1: Foundations of User Experience Design",
+    courses: [
+      {
+        courseTitle: "The basics of user experience design",
+        type: "video",
+        duration: "12 Menit"
+      },
+      {
+        courseTitle: "Jobs in the field of user experience",
+        type: "video",
+        duration: "12 Menit"
+      },
+      {
+        courseTitle: "The product development life cycle",
+        type: "video",
+        duration: "12 Menit"
+      }
+    ]
+  },
+  {
+    title: "Universal design, inclusive design, and equity-focused design",
+    courses: [
+      {
+        courseTitle: "The basics of user experience design",
+        type: "video",
+        duration: "12 Menit"
+      },
+      {
+        courseTitle: "Jobs in the field of user experience",
+        type: "video",
+        duration: "12 Menit"
+      },
+      {
+        courseTitle: "The product development life cycle",
+        type: "video",
+        duration: "12 Menit"
+      }
+    ]
+  },
+  {
+    title: "Introduction to design sprints",
+    courses: [
+      {
+        courseTitle: "The basics of user experience design",
+        type: "video",
+        duration: "12 Menit"
+      },
+      {
+        courseTitle: "Jobs in the field of user experience",
+        type: "video",
+        duration: "12 Menit"
+      },
+      {
+        courseTitle: "The product development life cycle",
+        type: "video",
+        duration: "12 Menit"
+      }
+    ]
+  },
+  {
+    title: "Introduction to UX research",
+    courses: [
+      {
+        courseTitle: "The basics of user experience design",
+        type: "video",
+        duration: "12 Menit"
+      },
+      {
+        courseTitle: "Jobs in the field of user experience",
+        type: "summary",
+        duration: "12 Menit"
+      },
+      {
+        courseTitle: "The product development life cycle",
+        type: "quiz",
+        duration: "12 Menit"
+      }
+    ]
+  },
+]
 
 function ProductDetails() {
   const [loading, setLoading] = useState(true);
@@ -33,6 +118,8 @@ function ProductDetails() {
 
   const product = data.find(item => item.id === params);
 
+  
+
   return (
     <main className='py-16'>
       {loading === true ? 
@@ -49,6 +136,7 @@ function ProductDetails() {
             <div className='w-full flex flex-col gap-6 md:gap-9'>
               <DescriptionBox descText={product.desc} />
               <TutorSection />
+              <Accordion title={"Kamu akan mempelajari"} data={courses} />
               <ReviewsSection />
             </div>
             <PricingCard title={product.title} price={product.price} />
